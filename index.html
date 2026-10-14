@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#071612">
+  <meta name="description" content="FoodLoop connects food innovation, by-product valorization, circular packaging and smarter food systems.">
+  <title>FoodLoop — The Circular Food Economy Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#071612;--panel:#0d211b;--panel2:#102820;--text:#f1f6ef;--muted:#a0b6aa;--lime:#c7f36b;--mint:#6de0b1;--line:rgba(207,239,218,.14);--max:1180px}
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:radial-gradient(ellipse at 78% 5%,rgba(49,118,78,.19),transparent 32%),var(--bg);color:var(--text);font-family:"DM Sans",sans-serif;line-height:1.55} a{color:inherit;text-decoration:none} button,input{font:inherit} button{cursor:pointer}
+    .wrap{width:min(var(--max),calc(100% - 44px));margin:auto}.nav{height:82px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}.brand{display:flex;align-items:center;gap:11px;font-family:"Space Grotesk",sans-serif;font-weight:700;font-size:22px;letter-spacing:-.8px}.brandmark{width:34px;height:34px;border-radius:11px;background:var(--lime);display:grid;place-items:center;color:#102218;font-size:19px;transform:rotate(-5deg)}.brand span em{font-style:normal;color:var(--lime)}.navlinks{display:flex;gap:30px;color:#c2d0c7;font-size:13px}.navlinks a:hover{color:var(--lime)}.navright{display:flex;align-items:center;gap:16px}.pill{display:inline-flex;align-items:center;gap:9px;padding:12px 17px;border-radius:999px;border:1px solid var(--line);font-size:13px;font-weight:700;transition:.2s}.pill.primary{background:var(--lime);color:#122218;border-color:var(--lime)}.pill:hover{transform:translateY(-2px)}.menu{display:none;background:none;color:white;border:0;font-size:25px}
+    .hero{padding:88px 0 72px;display:grid;grid-template-columns:1.08fr .92fr;gap:60px;align-items:center;min-height:590px}.eyebrow{display:inline-flex;align-items:center;gap:9px;color:var(--lime);font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase}.dot{height:7px;width:7px;border-radius:50%;background:var(--lime);box-shadow:0 0 15px var(--lime)}h1,h2,h3,p{margin-top:0}h1,h2,h3{font-family:"Space Grotesk",sans-serif;letter-spacing:-1.8px}h1{font-size:clamp(46px,6.4vw,78px);line-height:1.02;margin:22px 0 24px;max-width:680px}h1 .accent{color:var(--lime)}.hero p{color:var(--muted);font-size:17px;max-width:510px;line-height:1.8}.heroactions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}.microproof{display:flex;align-items:center;gap:12px;margin-top:38px;color:#a9bcb0;font-size:12px}.avatars{display:flex}.avatars span{height:27px;width:27px;border-radius:50%;display:grid;place-items:center;border:2px solid var(--bg);margin-left:-6px;background:#29483a;font-size:10px}.avatars span:first-child{margin-left:0}
+    .visual{min-height:430px;position:relative;display:grid;place-items:center}.orbital{position:absolute;width:min(100%,420px);aspect-ratio:1;border:1px solid rgba(199,243,107,.22);border-radius:50%;animation:spin 45s linear infinite}.orbital:before,.orbital:after{content:"";position:absolute;border:1px solid rgba(109,224,177,.16);border-radius:50%;inset:34px}.orbital:after{inset:72px;border-style:dashed}.orbitdot{position:absolute;width:12px;height:12px;border-radius:50%;background:var(--lime);box-shadow:0 0 22px var(--lime);top:44px;left:74px}.foodcore{position:relative;width:238px;height:238px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 32% 25%,#8de99b,#276f4d 35%,#123b2c 67%,#0b211a);box-shadow:0 0 90px rgba(91,208,123,.17),inset 0 0 40px rgba(213,255,177,.12);border:1px solid rgba(207,255,177,.4)}.leaf{font-size:112px;filter:drop-shadow(0 14px 18px rgba(0,0,0,.3));transform:rotate(-18deg)}.floatcard{position:absolute;background:rgba(13,33,27,.88);backdrop-filter:blur(16px);border:1px solid var(--line);border-radius:15px;padding:15px 17px;box-shadow:0 18px 60px #0003}.floatcard .label{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:1.2px}.floatcard strong{display:block;font-family:"Space Grotesk";font-size:22px;margin-top:3px}.floatcard.one{top:50px;right:-3px}.floatcard.two{bottom:53px;left:-7px}.floatcard strong small{font-size:12px;color:var(--mint);letter-spacing:0}
+    .ticker{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:20px 0;overflow:hidden}.tickerinner{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;color:#8fa79a;font-size:11px;font-weight:700;letter-spacing:1.7px;text-transform:uppercase}.tickerinner span{display:flex;align-items:center;gap:10px}.tickerinner b{color:var(--lime);font-size:16px}
+    section{padding:94px 0}.sectionhead{display:flex;align-items:end;justify-content:space-between;gap:28px;margin-bottom:35px}.sectionhead h2{font-size:clamp(32px,4vw,48px);line-height:1.08;margin:12px 0 0;max-width:620px}.sectionhead p{max-width:390px;color:var(--muted);font-size:14px;margin-bottom:3px}.searchbar{display:flex;align-items:center;gap:12px;border:1px solid var(--line);background:#0b1f19;border-radius:14px;padding:7px 12px 7px 17px;margin-bottom:23px}.searchicon{font-size:20px;color:var(--lime)}.searchbar input{width:100%;background:transparent;color:var(--text);border:0;outline:0;padding:10px 0;font-size:14px}.searchbar input::placeholder{color:#718b7c}.searchcount{white-space:nowrap;font-size:11px;color:var(--muted)}.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:25px}.filter{border:1px solid var(--line);background:transparent;color:#b7c8bd;padding:8px 14px;border-radius:999px;font-size:12px}.filter.active,.filter:hover{background:var(--lime);border-color:var(--lime);color:#132319}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}.card{border:1px solid var(--line);background:linear-gradient(145deg,rgba(17,42,32,.95),rgba(10,27,22,.95));border-radius:18px;overflow:hidden;transition:transform .25s,border-color .25s}.card:hover{transform:translateY(-5px);border-color:rgba(199,243,107,.42)}.cardart{height:166px;display:grid;place-items:center;position:relative;overflow:hidden;background:radial-gradient(circle at 50% 65%,rgba(199,243,107,.15),transparent 46%),#10271f}.cardart:before{content:"";position:absolute;width:190px;height:190px;border:1px solid rgba(199,243,107,.13);border-radius:50%}.cardart:after{content:"";position:absolute;width:130px;height:130px;border:1px dashed rgba(109,224,177,.22);border-radius:50%}.articon{font-size:61px;z-index:1;filter:drop-shadow(0 8px 16px #0005)}.tag{position:absolute;z-index:2;left:15px;top:14px;border:1px solid rgba(199,243,107,.25);background:#0b1f19d9;color:var(--lime);font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;border-radius:99px;padding:6px 9px}.cardbody{padding:20px}.cardbody h3{font-size:21px;letter-spacing:-.5px;margin:0 0 9px}.cardbody p{font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:17px}.cardfoot{border-top:1px solid var(--line);padding-top:13px;display:flex;align-items:center;justify-content:space-between;color:#a6b9ad;font-size:11px}.arrow{color:var(--lime);font-size:18px}.empty{grid-column:1/-1;text-align:center;border:1px dashed var(--line);border-radius:16px;padding:35px;color:var(--muted)}
+    .impact{background:linear-gradient(110deg,#102a20,#0a1c16);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.impactgrid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}.impact h2{font-size:clamp(34px,4.5vw,52px);line-height:1.08;margin:15px 0 20px}.impact p{color:var(--muted);max-width:480px;font-size:14px;line-height:1.8}.impactstats{display:grid;grid-template-columns:1fr 1fr;gap:13px}.stat{padding:22px;border:1px solid var(--line);border-radius:15px;background:#0b1d17}.stat strong{display:block;font-family:"Space Grotesk";font-size:34px;color:var(--lime);letter-spacing:-1px}.stat span{font-size:11px;color:var(--muted);display:block;margin-top:7px}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.step{padding:25px;border:1px solid var(--line);border-radius:16px}.stepnum{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;background:#203d2d;color:var(--lime);font-family:"Space Grotesk";font-weight:700;margin-bottom:24px}.step h3{font-size:20px;letter-spacing:-.4px;margin-bottom:9px}.step p{color:var(--muted);font-size:13px;margin:0;line-height:1.75}
+    .cta{padding:0 0 90px}.ctabox{border:1px solid rgba(199,243,107,.28);border-radius:24px;padding:47px;background:radial-gradient(ellipse at 85% 10%,rgba(199,243,107,.12),transparent 42%),#0e241b;display:flex;align-items:center;justify-content:space-between;gap:25px}.ctabox h2{font-size:clamp(30px,4vw,44px);margin:0 0 10px}.ctabox p{color:var(--muted);font-size:14px;margin:0}.footer{border-top:1px solid var(--line);padding:28px 0 34px;display:flex;align-items:center;justify-content:space-between;gap:20px;color:#81998b;font-size:11px}.footerlinks{display:flex;gap:20px}.toast{position:fixed;right:20px;bottom:20px;background:var(--lime);color:#102218;padding:13px 18px;border-radius:12px;font-size:13px;font-weight:700;box-shadow:0 10px 40px #0006;opacity:0;transform:translateY(10px);pointer-events:none;transition:.25s}.toast.show{opacity:1;transform:translateY(0)}
+    @keyframes spin{to{transform:rotate(360deg)}}@media(max-width:850px){.navlinks{display:none;position:absolute;top:72px;left:22px;right:22px;padding:18px;background:#0d211b;border:1px solid var(--line);border-radius:14px;flex-direction:column;gap:17px;z-index:10}.navlinks.open{display:flex}.menu{display:block}.navright .pill{display:none}.hero{grid-template-columns:1fr;gap:10px;padding-top:65px}.hero .visual{min-height:360px}.floatcard.one{right:3%}.floatcard.two{left:2%}.grid{grid-template-columns:repeat(2,1fr)}.impactgrid{grid-template-columns:1fr;gap:30px}.sectionhead{align-items:start;flex-direction:column}.ctabox{align-items:flex-start;flex-direction:column}}@media(max-width:560px){.wrap{width:min(var(--max),calc(100% - 30px))}.nav{height:70px}.brand{font-size:19px}.hero{padding:55px 0 45px;min-height:auto}h1{font-size:48px}.hero p{font-size:15px}.visual{min-height:315px!important}.orbital{width:300px}.foodcore{width:185px;height:185px}.leaf{font-size:88px}.floatcard{padding:11px 12px}.floatcard strong{font-size:18px}.floatcard.one{top:20px}.floatcard.two{bottom:28px}section{padding:68px 0}.grid{grid-template-columns:1fr}.cardart{height:150px}.impactstats{gap:9px}.stat{padding:16px}.stat strong{font-size:29px}.steps{grid-template-columns:1fr}.ctabox{padding:28px}.footer{align-items:flex-start;flex-direction:column}.tickerinner{justify-content:flex-start;gap:15px 22px}.searchcount{display:none}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
+  </style>
+</head>
+<body>
+  <header class="wrap nav">
+    <a class="brand" href="#home" aria-label="FoodLoop home"><span class="brandmark">↻</span><span>Food<em>Loop</em></span></a>
+    <nav class="navlinks" id="navlinks" aria-label="Main navigation">
+      <a href="#solutions">Solutions</a><a href="#impact">Our impact</a><a href="#how">How it works</a><a href="#contact">Get involved</a>
+    </nav>
+    <div class="navright"><a class="pill primary" href="#solutions">Explore platform <span>↗</span></a><button class="menu" id="menu" aria-label="Toggle menu" aria-expanded="false">☰</button></div>
+  </header>
+  <main>
+    <div class="wrap hero" id="home">
+      <div>
+        <div class="eyebrow"><span class="dot"></span> Food systems, reimagined</div>
+        <h1>Waste less.<br><span class="accent">Feed more.</span><br>Loop forward.</h1>
+        <p>FoodLoop is a circular food economy platform turning food-system challenges into smarter, more sustainable opportunities — from by-product innovation to next-generation packaging.</p>
+        <div class="heroactions"><a class="pill primary" href="#solutions">Explore solutions <span>↗</span></a><a class="pill" href="#how">See how it works <span>↓</span></a></div>
+        <div class="microproof"><div class="avatars"><span>♻</span><span>✳</span><span>◉</span></div><span>Designed for a more resource-smart food future</span></div>
+      </div>
+      <div class="visual" aria-label="Circular food economy illustration">
+        <div class="orbital"><span class="orbitdot"></span></div>
+        <div class="foodcore"><span class="leaf">🌱</span></div>
+        <div class="floatcard one"><span class="label">Circular mindset</span><strong>Use <span style="color:var(--lime)">→</span> Reuse</strong></div>
+        <div class="floatcard two"><span class="label">Innovation focus</span><strong>Food <span style="color:var(--mint)">×</span> Future</strong></div>
+      </div>
+    </div>
+    <div class="ticker"><div class="wrap tickerinner"><span><b>↻</b> By-product value</span><span><b>✳</b> Smarter packaging</span><span><b>◌</b> Resource efficiency</span><span><b>⌁</b> Food resilience</span></div></div>
+    <section id="solutions">
+      <div class="wrap">
+        <div class="sectionhead"><div><div class="eyebrow">The opportunity map</div><h2>Small loops. <span style="color:var(--lime)">Big change.</span></h2></div><p>Explore practical FoodTech pathways that can help keep valuable materials in use and reduce avoidable losses across the food chain.</p></div>
+        <div class="searchbar"><span class="searchicon">⌕</span><input id="search" type="search" placeholder="Search solutions, e.g. packaging, fruit waste..." aria-label="Search solutions"><span class="searchcount" id="searchcount">6 solutions</span></div>
+        <div class="filters" id="filters" aria-label="Filter solutions">
+          <button class="filter active" data-filter="all">All solutions</button><button class="filter" data-filter="byproducts">By-products</button><button class="filter" data-filter="packaging">Packaging</button><button class="filter" data-filter="preservation">Preservation</button><button class="filter" data-filter="data">Smart systems</button>
+        </div>
+        <div class="grid" id="cards">
+          <article class="card" data-category="byproducts" data-search="fruit vegetable peel byproduct valorization upcycling ingredients powder fibre">
+            <div class="cardart"><span class="tag">By-product value</span><span class="articon">🍊</span></div><div class="cardbody"><h3>Peel to Potential</h3><p>Explore how fruit and vegetable side streams could become useful ingredients, fibres, natural colours or compost through safe, validated processes.</p><div class="cardfoot"><span>UPCYCLING · INGREDIENTS</span><span class="arrow">↗</span></div></div>
+          </article>
+          <article class="card" data-category="packaging" data-search="smart sustainable biodegradable compostable packaging plant based shelf life materials">
+            <div class="cardart"><span class="tag">Next-gen materials</span><span class="articon">📦</span></div><div class="cardbody"><h3>Packaging, Re-thought</h3><p>Discover research directions in bio-based materials, right-sized packs and designs that balance product protection with end-of-life options.</p><div class="cardfoot"><span>MATERIALS · DESIGN</span><span class="arrow">↗</span></div></div>
+          </article>
+          <article class="card" data-category="preservation" data-search="food preservation shelf life cold chain drying storage spoilage freshness">
+            <div class="cardart"><span class="tag">Loss prevention</span><span class="articon">❄️</span></div><div class="cardbody"><h3>Freshness, Extended</h3><p>Consider cold-chain improvements, drying, appropriate storage and validated preservation methods to protect quality and reduce spoilage.</p><div class="cardfoot"><span>QUALITY · SHELF LIFE</span><span class="arrow">↗</span></div></div>
+          </article>
+          <article class="card" data-category="byproducts" data-search="spent grain coffee grounds food processing waste circular ingredients fermentation">
+            <div class="cardart"><span class="tag">Resource recovery</span><span class="articon">🧪</span></div><div class="cardbody"><h3>Side-Stream Science</h3><p>Map possible uses for food-processing residues through fermentation, extraction or other research-backed routes — with safety checks first.</p><div class="cardfoot"><span>BIOPROCESSING · R&D</span><span class="arrow">↗</span></div></div>
+          </article>
+          <article class="card" data-category="data" data-search="traceability data inventory forecasting supply chain food waste analytics">
+            <div class="cardart"><span class="tag">Smarter decisions</span><span class="articon">⌁</span></div><div class="cardbody"><h3>See the Whole Loop</h3><p>Use traceability, stock visibility and demand forecasting concepts to spot losses earlier and help food move where it is needed.</p><div class="cardfoot"><span>DATA · TRACEABILITY</span><span class="arrow">↗</span></div></div>
+          </article>
+          <article class="card" data-category="data" data-search="community food recovery donation surplus redistribution food security">
+            <div class="cardart"><span class="tag">Community impact</span><span class="articon">🤝</span></div><div class="cardbody"><h3>Surplus to Support</h3><p>Explore responsible surplus-food recovery models that prioritize safety, clear handling practices and connections with community partners.</p><div class="cardfoot"><span>RECOVERY · ACCESS</span><span class="arrow">↗</span></div></div>
+          </article>
+          <div class="empty" id="empty" hidden>No matching solutions yet. Try another search term or filter.</div>
+        </div>
+      </div>
+    </section>
+    <section class="impact" id="impact">
+      <div class="wrap impactgrid">
+        <div><div class="eyebrow">The circular advantage</div><h2>Design out waste.<br><span style="color:var(--lime)">Keep value moving.</span></h2><p>A circular food economy looks beyond disposal. It aims to prevent losses first, use resources efficiently, recover safe value where possible, and return biological materials to the system responsibly.</p><a class="pill" href="#how">Explore the approach <span>↗</span></a></div>
+        <div class="impactstats"><div class="stat"><strong>01</strong><span>Prevent avoidable food loss</span></div><div class="stat"><strong>02</strong><span>Recover value responsibly</span></div><div class="stat"><strong>03</strong><span>Design smarter materials</span></div><div class="stat"><strong>04</strong><span>Regenerate natural systems</span></div></div>
+      </div>
+    </section>
+    <section id="how">
+      <div class="wrap"><div class="sectionhead"><div><div class="eyebrow">From idea to impact</div><h2>Make the loop <span style="color:var(--lime)">real.</span></h2></div><p>Start with a problem, validate the science, and measure whether a solution improves the whole system.</p></div>
+        <div class="steps"><article class="step"><div class="stepnum">01</div><h3>Find the leak</h3><p>Identify where edible food, useful by-products, water or energy are being lost across a process.</p></article><article class="step"><div class="stepnum">02</div><h3>Test the idea</h3><p>Review feasibility, food safety, regulations, cost and life-cycle impacts before scaling an intervention.</p></article><article class="step"><div class="stepnum">03</div><h3>Measure the loop</h3><p>Track meaningful outcomes such as material recovery, reduced losses, quality, affordability and access.</p></article></div>
+      </div>
+    </section>
+    <section class="cta" id="contact"><div class="wrap"><div class="ctabox"><div><div class="eyebrow">Your idea belongs here</div><h2>What could we loop next?</h2><p>Have a FoodTech concept, student project or circular solution to explore?</p></div><a class="pill primary" href="mailto:hello@foodloop.example?subject=FoodLoop%20idea">Share an idea <span>↗</span></a></div></div></section>
+  </main>
+  <footer class="wrap footer"><a class="brand" href="#home"><span class="brandmark">↻</span><span>Food<em style="color:var(--lime);font-style:normal">Loop</em></span></a><span>© <span id="year"></span> FoodLoop. Built for a circular food future.</span><div class="footerlinks"><a href="#solutions">Solutions</a><a href="#impact">Impact</a><a href="#home">Back to top ↑</a></div></footer>
+  <div class="toast" id="toast" role="status">Demo interaction — connect your real contact workflow before launch.</div>
+  <script>
+    const search = document.getElementById('search');
+    const cards = [...document.querySelectorAll('.card')];
+    const filters = [...document.querySelectorAll('.filter')];
+    const empty = document.getElementById('empty');
+    const count = document.getElementById('searchcount');
+    let activeFilter = 'all';
+    function updateCards(){
+      const q = search.value.trim().toLowerCase();
+      let visible = 0;
+      cards.forEach(card => {
+        const matchesText = (card.innerText + ' ' + card.dataset.search).toLowerCase().includes(q);
+        const matchesFilter = activeFilter === 'all' || card.dataset.category === activeFilter;
+        const show = matchesText && matchesFilter;
+        card.hidden = !show;
+        if(show) visible++;
+      });
+      empty.hidden = visible !== 0;
+      count.textContent = `${visible} solution${visible===1?'':'s'}`;
+    }
+    search.addEventListener('input', updateCards);
+    filters.forEach(btn => btn.addEventListener('click', () => {
+      activeFilter = btn.dataset.filter;
+      filters.forEach(b => b.classList.toggle('active', b === btn));
+      updateCards();
+    }));
+    const menu = document.getElementById('menu'), nav = document.getElementById('navlinks');
+    menu.addEventListener('click', () => {
+      const open = nav.classList.toggle('open');
+      menu.setAttribute('aria-expanded', String(open));
+      menu.textContent = open ? '×' : '☰';
+    });
+    nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      nav.classList.remove('open'); menu.setAttribute('aria-expanded','false'); menu.textContent='☰';
+    }));
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.querySelectorAll('a[href^="mailto:"]').forEach(a => a.addEventListener('click', e => {
+      if(a.href.includes('foodloop.example')) {
+        e.preventDefault();
+        const toast = document.getElementById('toast');
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 3500);
+      }
+    }));
+    updateCards();
+  </script>
+</body>
+</html>
