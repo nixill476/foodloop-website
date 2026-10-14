@@ -36,12 +36,52 @@
 @media(max-width:700px){.category-row{grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}.category-banner{padding:15px}.category-banner .banner-mark{width:48px;height:48px;font-size:24px}}
 @media(max-width:380px){.category-row{grid-template-columns:repeat(2,minmax(0,1fr))}.category-tile strong{font-size:13px}}
 
+
+/* FoodLoop rotating promotional banner */
+.ad-carousel{position:relative;width:min(1120px,calc(100% - 30px));margin:12px auto 26px;border:1px solid #28513f;border-radius:24px;overflow:hidden;background:#0a1b14;box-shadow:0 16px 38px #0002}
+.ad-track{position:relative;min-height:270px}
+.ad-slide{position:absolute;inset:0;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:20px;padding:28px 34px;opacity:0;visibility:hidden;transform:translateX(18px);transition:opacity .55s ease,transform .55s ease,visibility .55s;overflow:hidden}
+.ad-slide.active{position:relative;opacity:1;visibility:visible;transform:translateX(0)}
+.ad-slide:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 80% 20%,#a7f36b20,transparent 42%),linear-gradient(110deg,#102b20,#07140f 75%);z-index:0}
+.ad-slide>*{position:relative;z-index:1}
+.ad-copy .ad-label{display:inline-block;color:#092016;background:var(--g);border-radius:99px;padding:5px 10px;font-size:10px;font-weight:900;letter-spacing:1.2px;text-transform:uppercase}
+.ad-copy h2{font-size:clamp(25px,4vw,42px);line-height:1.06;letter-spacing:-1.3px;margin:13px 0 9px;max-width:520px}
+.ad-copy h2 span{color:var(--g)}.ad-copy p{max-width:470px;color:#c0d2c7;font-size:14px;margin:0 0 18px}
+.ad-visual{height:205px;border-radius:19px;overflow:hidden;border:1px solid #42684e;background:#143625;box-shadow:0 12px 28px #0004}
+.ad-visual img{width:100%;height:100%;object-fit:cover;display:block}
+.ad-visual .ad-art{height:100%;display:grid;place-items:center;font-size:100px;background:radial-gradient(circle at 50% 40%,#2f754b,#0d281b 70%)}
+.ad-controls{position:absolute;z-index:3;left:34px;right:34px;bottom:13px;display:flex;align-items:center;justify-content:space-between;pointer-events:none}
+.ad-dots,.ad-arrows{display:flex;gap:7px;align-items:center;pointer-events:auto}
+.ad-dot,.ad-arrow{border:1px solid #51765e;background:#07150fe8;color:#f0f8f2;border-radius:99px;cursor:pointer;display:grid;place-items:center}
+.ad-dot{width:8px;height:8px;padding:0}.ad-dot.active{width:24px;background:var(--g);border-color:var(--g)}.ad-arrow{width:32px;height:32px;font-size:17px}
+.ad-note{font-size:10px;color:#a9c0b0;margin-top:7px}
+@media(max-width:650px){.ad-carousel{width:calc(100% - 22px);margin:6px auto 20px;border-radius:19px}.ad-track{min-height:390px}.ad-slide{grid-template-columns:1fr;gap:13px;padding:21px 18px 55px;align-content:start}.ad-copy h2{font-size:30px;margin:10px 0 7px}.ad-copy p{font-size:12px;margin-bottom:10px}.ad-visual{height:145px;grid-row:2}.ad-visual .ad-art{font-size:75px}.ad-controls{left:18px;right:18px;bottom:12px}.ad-note{margin-top:5px}}
+@media(prefers-reduced-motion:reduce){.ad-slide{transition:none}}
 </style>
 </head>
 <body>
 <header class="nav"><div class="wrap navin"><a class="brand" href="#home"><span class="logo">↻</span>Food<em>Loop</em></a><nav class="links"><a href="#market">Marketplace</a><a href="#impact">Impact</a><a href="#how">How it works</a><a href="#services">Six Services</a></nav><button class="btn primary" id="openTop">＋ Add listing</button></div></header>
 <main>
 <section class="wrap hero" id="home"><div><div class="eyebrow"><span class="dot"></span> Circular food economy · Prototype</div><h1>Waste less.<br><span>Feed more.</span></h1><p class="lead">FoodLoop is a proposed platform designed to connect rural producers directly with commercial buyers, reduce food wastage, improve market accessibility, and promote sustainable rural development.</p><div class="actions"><a class="btn primary" href="#market">Explore marketplace ↗</a><button class="btn" id="openHero">＋ List surplus food</button></div><div class="tiny">World Food Day concept · Innovate Today. Nourish Tomorrow.</div></div><div class="art" aria-label="Futuristic circular food illustration"><div class="ring"></div><div class="ring r2"></div><div class="planet">🌎</div><div class="float f1"><b>↗ Circular by design</b>Keep resources in use</div><div class="float f2"><b>♻ Second life</b>Surplus → opportunity</div><div class="float f3"><b>⌁ Local connections</b>Producers + buyers</div><div class="float f4"><b>● Food future</b>Smarter use, less waste</div></div></section>
+
+
+<section class="ad-carousel" id="foodloop-promotions" aria-label="FoodLoop featured promotions">
+  <div class="ad-track">
+    <article class="ad-slide active" aria-hidden="false">
+      <div class="ad-copy"><span class="ad-label">Featured · Fresh from farms</span><h2>Fresh harvest.<br><span>Better connections.</span></h2><p>Help local producers connect with kitchens, retailers and community buyers through one simple platform.</p><a class="btn primary" href="#market">Explore fresh produce ↗</a><div class="ad-note">Student prototype · Example listings only</div></div>
+      <div class="ad-visual"><img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=900&q=85" alt="Fresh vegetables ready for market" loading="lazy"></div>
+    </article>
+    <article class="ad-slide" aria-hidden="true">
+      <div class="ad-copy"><span class="ad-label">Circular economy</span><h2>Surplus food deserves<br><span>a second chance.</span></h2><p>Discover ideas for redirecting usable surplus toward processing, community meals or other suitable uses.</p><a class="btn primary" href="#market" data-ad-filter="produce">Discover surplus ideas ↗</a><div class="ad-note">Real food safety checks are essential</div></div>
+      <div class="ad-visual"><img src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=900&q=85" alt="Colourful produce at a market" loading="lazy"></div>
+    </article>
+    <article class="ad-slide" aria-hidden="true">
+      <div class="ad-copy"><span class="ad-label">Smarter resources</span><h2>Turn by-products into<br><span>new possibilities.</span></h2><p>Explore value-added food concepts, reusable packaging and preservation ideas that support less waste.</p><a class="btn primary" href="#explore-categories">Explore solutions ↗</a><div class="ad-note">Concepts for learning and demonstration</div></div>
+      <div class="ad-visual"><img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=900&q=85" alt="Fresh ingredients arranged for food preparation" loading="lazy"></div>
+    </article>
+  </div>
+  <div class="ad-controls"><div class="ad-dots" aria-label="Choose promotion"><button class="ad-dot active" type="button" aria-label="Show promotion 1" aria-current="true"></button><button class="ad-dot" type="button" aria-label="Show promotion 2" aria-current="false"></button><button class="ad-dot" type="button" aria-label="Show promotion 3" aria-current="false"></button></div><div class="ad-arrows"><button class="ad-arrow" type="button" data-ad-prev aria-label="Previous promotion">‹</button><button class="ad-arrow" type="button" data-ad-next aria-label="Next promotion">›</button></div></div>
+</section>
 
 <section class="wrap category-showcase" id="explore-categories" aria-labelledby="categoryTitle">
   <div class="category-banner">
@@ -130,6 +170,23 @@ $("search").addEventListener("input",render);$("sort").addEventListener("change"
 $("photo").addEventListener("change",e=>{let f=e.target.files?.[0],img=$("preview");if(!f){img.style.display="none";return}if(!f.type.startsWith("image/")||f.size>1.5*1024*1024){toast("Choose an image file under 1.5 MB.");e.target.value="";img.style.display="none";return}let r=new FileReader();r.onload=()=>{img.src=r.result;img.style.display="block"};r.readAsDataURL(f)});
 $("form").addEventListener("submit",e=>{e.preventDefault();let p={id:"u"+Date.now(),name:$("name").value.trim(),cat:$("cat").value,qty:$("qty").value.trim(),price:$("price").value===""?null:Number($("price").value),desc:$("desc").value.trim(),emoji:({produce:"🥬",grains:"🌾",byproducts:"♻️",packaging:"📦",preservation:"🫙"})[$("cat").value],tag:"Your demo listing",seller:"This browser · Demo",custom:true};if($("preview").src&&$("preview").style.display!=="none")p.photo=$("preview").src;custom.unshift(p);let ok=save();close();e.target.reset();$("preview").src="";$("preview").style.display="none";active="all";$("search").value="";render();toast(ok?"Demo listing added on this device.":"Added for this session only; storage unavailable.")});
 $("grid").addEventListener("click",e=>{let rm=e.target.closest("[data-remove]"),view=e.target.closest("[data-view]"),enq=e.target.closest("[data-enquire]");let id=(rm||view||enq)?.dataset.remove||(rm||view||enq)?.dataset.view||(rm||view||enq)?.dataset.enquire;if(!id)return;let p=[...custom,...samples].find(x=>x.id===id);if(!p)return;if(rm){custom=custom.filter(x=>x.id!==id);save();render();toast("Demo listing removed.");return}if(enq){toast("Demo only: real enquiries need a backend or contact service.");return}alert(`${p.name}\nCategory: ${catNames[p.cat]}\nQuantity: ${p.qty}\nPrice: ${money(p.price)}\n\n${p.desc}\nSeller: ${p.seller||"Demo listing"}\n\nPrototype listing. Verify availability, quality and food safety before any real transaction.`)});
+
+// Auto-rotating FoodLoop promotional banner (manual arrows/dots also work).
+(function(){
+ const root=document.querySelector('.ad-carousel'); if(!root)return;
+ const slides=[...root.querySelectorAll('.ad-slide')],dots=[...root.querySelectorAll('.ad-dot')];
+ let current=0,timer=null;
+ function show(i){current=(i+slides.length)%slides.length;slides.forEach((slide,n)=>{const active=n===current;slide.classList.toggle('active',active);slide.setAttribute('aria-hidden',String(!active));});dots.forEach((dot,n)=>{const active=n===current;dot.classList.toggle('active',active);dot.setAttribute('aria-current',String(active));});}
+ function stop(){if(timer){clearInterval(timer);timer=null;}}
+ function start(){stop();if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches)timer=setInterval(()=>show(current+1),5000);}
+ dots.forEach((dot,n)=>dot.addEventListener('click',()=>{show(n);start();}));
+ root.querySelector('[data-ad-prev]').addEventListener('click',()=>{show(current-1);start();});
+ root.querySelector('[data-ad-next]').addEventListener('click',()=>{show(current+1);start();});
+ root.addEventListener('mouseenter',stop);root.addEventListener('mouseleave',start);root.addEventListener('focusin',stop);root.addEventListener('focusout',start);
+ document.addEventListener('visibilitychange',()=>document.hidden?stop():start());
+ start();
+})();
+
 load();render();
 
 // Category tiles scroll to the marketplace and activate the matching filter.
