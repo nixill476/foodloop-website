@@ -86,6 +86,96 @@
 .footer .credits strong{display:block;color:#a7f36b!important;font-size:13px;letter-spacing:2px;margin-bottom:8px;}
 .footer .credits b{color:#a7f36b!important;}
 @media(max-width:600px){.footer .credits{font-size:13px;padding:18px 8px 4px;overflow-wrap:anywhere;}}
+
+/* Mobile-first usability polish: responsive navigation, cards, forms and touch targets. */
+.nav-menu{display:none;white-space:nowrap}
+html{scroll-padding-top:78px;-webkit-text-size-adjust:100%}
+img{max-width:100%}
+button,.btn,.filter,.category-tile{touch-action:manipulation}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--m);outline-offset:3px}
+.card,.stat,.how,.category-tile,.ad-slide{min-width:0}
+.card h3,.card p,.listing,.category-tile strong{overflow-wrap:anywhere}
+@media(max-width:800px){
+ .navin{position:relative;gap:8px}
+ .nav-menu{display:inline-flex;align-items:center;justify-content:center;padding:9px 11px}
+ .links{display:none;position:absolute;top:calc(100% + 1px);left:-1px;right:-1px;z-index:25;padding:10px;background:#071611f7;border:1px solid var(--line);border-radius:0 0 16px 16px;box-shadow:0 18px 30px #0005;flex-direction:column;align-items:stretch;gap:3px}
+ .links.mobile-open{display:flex}
+ .links a{padding:12px 13px;border-radius:10px;font-size:14px}
+ .links a:hover,.links a:focus-visible{background:#102820}
+ .top-add{padding:9px 11px}
+ .hero{gap:22px}
+ .head{gap:9px}
+ .market{padding:clamp(10px,2.5vw,18px)}
+ .tools{align-items:stretch}
+ .tools .search{min-width:0;flex-basis:100%}
+ .filters{overflow-x:auto;flex-wrap:nowrap;padding-bottom:5px;scrollbar-width:thin}
+ .filter{flex:0 0 auto;min-height:38px}
+ .category-row-six{grid-template-columns:repeat(3,minmax(0,1fr))}
+ .ad-slide{min-width:0}
+ .formgrid{gap:12px}
+}
+@media(max-width:520px){
+ .wrap{width:calc(100% - 24px)}
+ .navin{height:auto;min-height:62px;flex-wrap:nowrap}
+ .brand{font-size:17px;white-space:nowrap}
+ .logo{width:32px;height:32px;margin-right:5px}
+ .nav-menu{font-size:12px;padding:9px 10px}
+ .top-add{font-size:0;padding:9px 11px;min-width:38px}
+ .top-add::first-letter{font-size:17px}
+ .hero{padding:28px 0 20px;gap:20px}
+ h1{font-size:clamp(38px,11vw,54px);letter-spacing:-1.8px}
+ .lead{font-size:15px;line-height:1.6}
+ .actions{gap:8px}
+ .actions .btn{min-height:44px}
+ .art{min-height:270px;border-radius:20px}
+ .float{max-width:43%;font-size:10px;line-height:1.35;padding:8px}
+ .float b{font-size:11px}
+ .f1{top:13px;left:10px}.f2{top:45px;right:9px}.f3{bottom:12px;left:10px}.f4{bottom:12px;right:9px}
+ .section{padding:28px 0}
+ .head h2{font-size:clamp(25px,7vw,32px)}
+ .head p{font-size:13px}
+ .stats{gap:8px}
+ .stat{padding:12px;border-radius:13px}
+ .stat strong{font-size:22px}
+ .market{border-radius:16px;padding:10px}
+ .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+ .visual{height:clamp(94px,29vw,125px)}
+ .emoji{font-size:clamp(38px,12vw,50px)}
+ .body{padding:9px}
+ .cardtop{flex-direction:column;gap:3px}
+ .card h3{font-size:12px;line-height:1.35}
+ .card p{font-size:11px;min-height:0;line-height:1.45}
+ .price{font-size:11px;white-space:normal}
+ .meta{font-size:9px;flex-wrap:wrap}
+ .cardactions{flex-direction:column;gap:6px}
+ .cardactions .btn{min-height:38px;font-size:11px}
+ .category-banner{align-items:flex-start;padding:14px;border-radius:15px}
+ .category-row-six{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:9px!important}
+ .category-row-six .category-tile{min-height:170px;padding:12px 8px}
+ .category-row-six .category-image{width:76px!important;height:76px!important}
+ .category-row-six .category-tile strong{font-size:12px;line-height:1.3}
+ .ad-carousel{width:calc(100% - 24px);margin:4px auto 16px;border-radius:16px}
+ .ad-track{min-height:0}
+ .ad-slide{padding:18px 15px 58px;gap:12px}
+ .ad-copy h2{font-size:clamp(26px,8vw,34px)}
+ .ad-copy p{font-size:13px;line-height:1.5}
+ .ad-visual{height:145px;border-radius:13px}
+ .ad-controls{bottom:12px}
+ .howgrid,.formgrid{grid-template-columns:1fr}
+ .field.full{grid-column:auto}
+ .formgrid .field input,.formgrid .field select,.formgrid .field textarea{min-height:44px}
+ .modal{padding:16px;border-radius:16px}
+ .footer .credits{font-size:12px;line-height:1.8;overflow-wrap:anywhere}
+}
+@media(max-width:360px){
+ .wrap{width:calc(100% - 18px)}
+ .brand{font-size:15px}.nav-menu{font-size:11px;padding:8px}
+ .top-add{min-width:34px;padding:8px}
+ .grid{gap:6px}.body{padding:8px}.card h3{font-size:11px}
+ .category-row-six{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.planet,.ring,.ring.r2{animation:none!important}}
+
 </style>
 </head>
 <body>
@@ -97,7 +187,7 @@
   <div class="loader-track" aria-hidden="true"><span></span></div>
 </div>
 
-<header class="nav"><div class="wrap navin"><a class="brand" href="#home"><span class="logo">↻</span>Food<em>Loop</em></a><nav class="links"><a href="#market">Marketplace</a><a href="#impact">Impact</a><a href="#how">How it works</a><a href="#services">Six Services</a></nav><button class="btn primary" id="openTop">＋ Add listing</button></div></header>
+<header class="nav"><div class="wrap navin"><a class="brand" href="#home"><span class="logo">↻</span>Food<em>Loop</em></a><nav class="links" id="mainNavLinks"><a href="#market">Marketplace</a><a href="#impact">Impact</a><a href="#how">How it works</a><a href="#services">Six Services</a></nav><button class="btn nav-menu" id="mobileMenuBtn" type="button" aria-label="Open navigation" aria-expanded="false">☰ Menu</button><button class="btn primary top-add" id="openTop">＋ Add listing</button></div></header>
 <main>
 <section class="wrap hero" id="home"><div><div class="eyebrow"><span class="dot"></span> Circular food economy · Prototype</div><h1>Waste less.<br><span>Feed more.</span></h1><p class="lead">FoodLoop is a proposed platform designed to connect rural producers directly with commercial buyers, reduce food wastage, improve market accessibility, and promote sustainable rural development.</p><div class="actions"><a class="btn primary" href="#market">Explore marketplace ↗</a><button class="btn" id="openHero">＋ List surplus food</button></div><div class="tiny">World Food Day concept · Innovate Today. Nourish Tomorrow.</div></div><div class="art" aria-label="Futuristic circular food illustration"><div class="ring"></div><div class="ring r2"></div><div class="planet">🌎</div><div class="float f1"><b>↗ Circular by design</b>Keep resources in use</div><div class="float f2"><b>♻ Second life</b>Surplus → opportunity</div><div class="float f3"><b>⌁ Local connections</b>Producers + buyers</div><div class="float f4"><b>● Food future</b>Smarter use, less waste</div></div></section>
 
@@ -128,7 +218,7 @@
     <button class="category-tile" type="button" data-jump-category="preservatives"><div class="category-image"><img loading="lazy" src="https://images.unsplash.com/photo-1603909223429-69bb7101f420?auto=format&fit=crop&w=400&q=80" alt="Food ingredients and jars"></div><strong>Food Preservatives</strong><span>Approved food-grade ingredients</span></button>
     <button class="category-tile" type="button" data-jump-category="storage"><div class="category-image"><img loading="lazy" src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=400&q=80" alt="Storage warehouse"></div><strong>Cold Storage</strong><span>Cold rooms and refrigeration</span></button>
     <button class="category-tile" type="button" data-jump-category="crop-protection"><div class="category-image"><img loading="lazy" src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=400&q=80" alt="Agricultural crops"></div><strong>Crop Protection</strong><span>Crop pest and disease control</span></button>
-    <button class="category-tile" type="button" data-jump-category="packaging"><div class="category-image"><img loading="lazy" src="https://images.unsplash.com/photo-1605600659873-d808a13e4d9a?auto=format&fit=crop&w=400&q=80" alt="Reusable packaging containers"></div><strong>Eco-Packaging</strong><span>Crates, bags and containers</span></button>
+    <button class="category-tile" type="button" data-jump-category="packaging"><div class="category-image"><img loading="lazy" src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=800&q=85" alt="Reusable packaging containers"></div><strong>Eco-Packaging</strong><span>Crates, bags and containers</span></button>
     <button class="category-tile" type="button" data-jump-category="processing"><div class="category-image"><img loading="lazy" src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=400&q=80" alt="Food processing equipment"></div><strong>Processing & Equipment</strong><span>Drying, milling and tools</span></button>
   </div>
   <p class="category-safety"><strong>Safety note:</strong> Food preservatives are for food use only when permitted for the specific product and within legal limits. Crop-protection products are not food preservatives; always follow the approved label and local regulations.</p>
@@ -254,4 +344,33 @@ const servicesFrame=document.getElementById("servicesFrame");if(servicesFrame){s
   setTimeout(()=>{if(loader)loader.classList.add('loader-hide')},4500);
 })();
 </script>
+
+<script>
+(function(){
+ const button=document.getElementById('mobileMenuBtn');
+ const nav=document.getElementById('mainNavLinks');
+ if(!button||!nav)return;
+ button.addEventListener('click',function(){
+   const open=nav.classList.toggle('mobile-open');
+   button.setAttribute('aria-expanded',String(open));
+   button.setAttribute('aria-label',open?'Close navigation':'Open navigation');
+   button.textContent=open?'✕ Close':'☰ Menu';
+ });
+ nav.querySelectorAll('a').forEach(function(link){link.addEventListener('click',function(){nav.classList.remove('mobile-open');button.setAttribute('aria-expanded','false');button.setAttribute('aria-label','Open navigation');button.textContent='☰ Menu';});});
+ document.addEventListener('click',function(event){if(!nav.contains(event.target)&&!button.contains(event.target)){nav.classList.remove('mobile-open');button.setAttribute('aria-expanded','false');button.setAttribute('aria-label','Open navigation');button.textContent='☰ Menu';}});
+})();
+</script>
+
+<script>
+document.querySelectorAll('.category-image img').forEach(function(img) {
+  img.addEventListener('error', function() {
+    if (img.dataset.fallbackTried) return;
+    img.dataset.fallbackTried = '1';
+    if (img.alt && img.alt.toLowerCase().includes('reusable packaging')) {
+      img.src = 'https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=800&q=85';
+    }
+  });
+});
+</script>
+
 </body></html>
